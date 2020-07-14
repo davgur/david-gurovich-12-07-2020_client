@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "sourceMap": true,
+    "target": "es2017",
+    "outDir": "./dist",
+    "baseUrl": "./src",
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,6 +23,13 @@
     "jsx": "react"
   },
   "include": [
-    "src"
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "typeRoots": [
+    "src/types",
+    "node_modules/@types"
   ]
 }

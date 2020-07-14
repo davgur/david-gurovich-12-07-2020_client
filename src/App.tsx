@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Switch, Route, withRouter} from 'react-router-dom';
+
+import Auth from './auth/container'
+import TaskContainer from './task/tasks'
+import Task from './task/taskItem'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Switch>
+            <Route exact path='/' component={Auth} />
+            <Route path='/tasks' component={TaskContainer} />
+            <Route path='/task/:id' component={Task} />
+        </Switch>
+    );
 }
 
 export default App;
